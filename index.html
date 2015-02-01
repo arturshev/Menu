@@ -44,9 +44,37 @@
 				title: 'Exit',
 				action: function () {console.log('Exit');}
 			}];
-
+			
+			var menuExample2 = [{
+				title: 'File2',
+				action: function () {console.log('open file')}
+			}, {
+				title: 'Edit2',
+				action: function () {console.log('edit content')}
+			}, {	
+				title: 'More stuff2',
+				submenu: [{
+					title: 'Send by email',
+					action: function () {console.log('emailed')}
+				}, {
+					title: 'Send via skype',
+					action: function () {console.log('skyped')}
+				}, {
+					title: 'Other',
+					submenu: [{
+						title: 'Other by email',
+						action: function () {console.log('Other emailed')}
+					}, {
+						title: 'Other via skype',
+						action: function () {console.log('Other skyped')}
+					}]
+				}]
+			},{
+				title: 'Exit2',
+				action: function () {console.log('Exit');}
+			}];
 			window.cm = new ContextMenu(document.querySelector('.left'), menuExample);
-			window.cm = new ContextMenu(document.querySelector('.right'), menuExample);
+			window.cm = new ContextMenu(document.querySelector('.right'), menuExample2);
 
 		}());
 	</script>
